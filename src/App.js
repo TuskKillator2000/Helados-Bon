@@ -1,10 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 export function Greeting() {
-  return <h1>klk mundo</h1>
-
- }
- 
-
- 
+  const name = true;
+  return <h1>{name ? "Estoy casado" : "No estoy casado"}
+  </h1>;
+}

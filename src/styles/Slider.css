@@ -1,0 +1,18 @@
+.carousel {
+    margin-top: 150px; /* Espacio entre el nav y el carrusel */
+    width: 100%; /* Ancho del carrusel */
+    max-width: 460px; /* Ancho máximo */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen */
+    margin-left: auto; /* Centra el carrusel */
+    margin-right: auto; /* Centra el carrusel */
+    background-color: rgba(99, 178, 224, 0.87);
+}
+  
+  .carousel img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del carrusel */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 400px; /* Ajusta la altura máxima de las imágenes */
+    object-fit: cover; /* Asegura que la imagen se ajuste dentro del contenedor */
+  }
+  

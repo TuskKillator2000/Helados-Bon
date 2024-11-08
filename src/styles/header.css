@@ -1,45 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
 nav {
-  display: flex; /* Usar flexbox */
-  justify-content: space-between; /* Espacio entre el logo y los enlaces */
-  align-items: center; /* Alinear verticalmente */
-  background: #FCAFC0;
-  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
   width: 100%;
-  padding: 10px 20px; /* Espaciado alrededor */
-  position: relative; /* Necesario para el z-index */
-  z-index: 10; /* Asegura que el nav esté por encima */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin: 0;
+}
+
+/* Estilos para el logo y el título */
+.logo {
+  display: flex;
+  align-items: center;  /* Centra el logo y el título verticalmente */
 }
 
 .logo img {
-  width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+  width: 130px; /* Ajusta el tamaño del logo según sea necesario */
+  margin-right: 10px; /* Espacio entre el logo y el título */
 }
 
+.logo h1 {
+  font-size: 24px; /* Tamaño del título */
+  color: #333;  /* Color del texto */
+  margin: 0;  /* Elimina los márgenes predeterminados */
+}
+
+/* Estilos para el menú */
 nav ul {
-  display: flex; /* Usar flexbox para los enlaces */
+  display: flex;
   margin-right: 20px;
 }
 
 nav ul li {
   display: inline-block;
-  margin: 0 5px; /* Espaciado entre los enlaces */
+  margin: 0 5px;
 }
 
 nav ul li a {
-  color: white;
+  color: lightskyblue;
   font-size: 15px;
   padding: 7px 13px;
   border-radius: 3px;
@@ -49,35 +52,26 @@ nav ul li a {
 
 a.active,
 a:hover {
-  background: #1b9bff;
+  background: #fdb0c0;
+  color: #fff;
   transition: .5s;
+  border-radius: 15px;
 }
 
 .checkbtn {
   font-size: 22px;
-  color: white;
+  color: #fdb0c0;
   cursor: pointer;
-  display: none; /* Esconde el botón por defecto */
+  display: none;
 }
 
 #check {
-  display: none; /* Esconde el checkbox */
+  display: none;
 }
 
-@media (max-width: 1050px) {
-  label.logo {
-    padding-left: 30px;
-  }
-
-  nav ul li a {
-    font-size: 16px;
-  }
-}
-
-/* Responsive media query code for small screen */
 @media (max-width: 890px) {
   .checkbtn {
-    display: block; /* Muestra el botón en pantallas pequeñas */
+    display: block;
   }
 
   label.logo {
@@ -88,18 +82,18 @@ a:hover {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: rgba(44, 62, 80, 0.95); /* Fondo semi-transparente */
-    top: 0; /* Asegura que el menú comience desde la parte superior */
+    background: rgba(44, 62, 80, 0.95);
+    top: 0;
     left: -100%;
     text-align: center;
-    flex-direction: column; /* Cambia a columna para los enlaces */
+    flex-direction: column;
     transition: all .5s;
-    z-index: 9; /* Asegura que el menú esté por encima del header */
+    z-index: 9;
   }
 
   nav ul li {
-    display: block; /* En pantallas pequeñas, los enlaces se muestran uno debajo del otro */
-    margin: 50px 0; /* Espaciado entre enlaces */
+    display: block;
+    margin: 50px 0;
   }
 
   nav ul li a {
@@ -113,11 +107,15 @@ a:hover {
   }
 
   #check:checked ~ ul {
-    left: 0; /* Muestra el menú al activar el checkbox */
+    left: 0;
   }
-}
 
-section {
-  background-size: cover;
-  height: calc(100vh - 80px);
+  section {
+    padding-top: 70px;
+    height: auto;
+  }
+
+  section > * {
+    margin-top: 0;
+  }
 }

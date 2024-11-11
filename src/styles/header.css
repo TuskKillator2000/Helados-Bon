@@ -50,7 +50,7 @@ nav ul li a {
   text-transform: uppercase;
 }
 
-a.active,
+.active,
 a:hover {
   background: #fdb0c0;
   color: #fff;

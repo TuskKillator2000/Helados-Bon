@@ -9,20 +9,23 @@ const cards = [
         id: 1,
         name: "barquito abordado",
         image: Producto1,
-        precio: 100,
+        precio: 140,
         descripcion: "Un helado rico y delicioso para el calor"
     },
     
     {
         id: 2,
-        name: "Producto2",
+        name: "Helado Danes",
         image: Producto2,
-        precio: 200
+        precio: 100,
+        descripcion: "Un helado sencillo para comer de postre"
     },
     {
         id: 3,
-        name: "Producto3",
-        image: Producto3
+        name: "Super Sundae",
+        image: Producto3,
+        precio: 110,
+        descripcion: "Helado rico en sabores "
     }
 
 
@@ -37,7 +40,7 @@ export function Cards() {
             cards.map(cards =>(
                 <div key={cards.id}>
                     
-                    <Card name = {cards.name} image = {cards.image} precio = {cards.precio}/>
+                    <Card name = {cards.name} image = {cards.image} precio = {cards.precio} descripcion = {cards.descripcion}/>
 
                 </div>
                     

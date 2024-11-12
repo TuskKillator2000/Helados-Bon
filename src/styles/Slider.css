@@ -1,5 +1,5 @@
 .carousel {
-    margin-top: 150px; /* Espacio entre el nav y el carrusel */
+    margin-top: 90px; /* Espacio entre el nav y el carrusel */
     width: 100%; /* Ancho del carrusel */
     max-width: 460px; /* Ancho máximo */
     border-radius: 10px; /* Bordes redondeados */

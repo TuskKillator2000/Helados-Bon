@@ -17,8 +17,8 @@ function App() {
         {/* Define otras rutas aquí según sea necesario */}
       </Routes>
     </Router>
-
     <Footer/>
+    
     </>
 
   );

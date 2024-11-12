@@ -1,7 +1,7 @@
 import "./styles/card.css";
-import {Cards} from "./Cards.js"
 
-export function Card({image , name}) {
+
+export function Card({image , name, precio}) {
   return (
     
         <div className="card">
@@ -9,7 +9,7 @@ export function Card({image , name}) {
             <div className="card-content">
                 <h3 className="card-title">{name}</h3>
                 <p className="card-description">Descripción breve del producto. ¡Haz tu compra ahora!</p>
-                <span className="price">$19.99</span>
+                <span className="price">$ {precio}</span>
                 <button className="buy-btn">Comprar</button>
             </div>
         </div>

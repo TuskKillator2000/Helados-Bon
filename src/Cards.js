@@ -7,14 +7,17 @@ import "./styles/card.css"
 const cards = [
     {
         id: 1,
-        name: "Producto1",
-        image: Producto1
+        name: "barquito abordado",
+        image: Producto1,
+        precio: 100,
+        descripcion: "Un helado rico y delicioso para el calor"
     },
     
     {
         id: 2,
         name: "Producto2",
-        image: Producto2
+        image: Producto2,
+        precio: 200
     },
     {
         id: 3,
@@ -29,12 +32,12 @@ const cards = [
 export function Cards() {
   return (
     <>
-      <div className="container">
+      <div className="container bg-light p-4 border border-white rounded-3">
         {
             cards.map(cards =>(
                 <div key={cards.id}>
                     
-                    <Card name = {cards.name} image = {cards.image}/>
+                    <Card name = {cards.name} image = {cards.image} precio = {cards.precio}/>
 
                 </div>
                     

@@ -1,28 +1,27 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from "./Footer";
-import { Nosotros }from './Nosotros'; // Importa el componente de la página "Sobre nosotros"
-import { Home } from './Home';   // Necesitas un componente para la página principal
+import { Nosotros } from './Nosotros';
+import { Registro } from "./Registro.js";
+import { Home } from './Home';
+import { CartProvider } from './CartContext'; // Importa el CartProvider
 
 function App() {
   return (
-    <>
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Nosotros" element={<Nosotros />} />
-        {/* Define otras rutas aquí según sea necesario */}
-      </Routes>
-    </Router>
-    <Footer/>
-    
-    </>
-
+    <CartProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Nosotros" element={<Nosotros />} />
+          <Route path="/Registro" element={<Registro/>}/>
+        </Routes>
+        <Footer />
+        {/* También puedes renderizar el componente Registro aquí */}
+      </Router>
+    </CartProvider>
   );
 }
 
 export default App;
-

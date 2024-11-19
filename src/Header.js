@@ -24,7 +24,11 @@ export function Header() {
             <NavLink to="/">Página principal</NavLink>
           </li>
           <li>
-            <NavLink to="/nosotros" className="noActive">Sobre nosotros</NavLink>
+            <NavLink to="/nosotros" >Sobre nosotros</NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/registro" >Registro</NavLink>
           </li>
         </ul>
       </nav>

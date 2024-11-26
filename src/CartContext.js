@@ -9,17 +9,38 @@ export function CartProvider({ children }) {
 
   // Función para agregar un producto al carrito
   const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
+    setCart((prevCart) => {
+      const existingItem = prevCart.find((item) => item.name === product.name);
+      if (existingItem) {
+        // Si el producto ya está en el carrito, aumentamos la cantidad
+        return prevCart.map((item) =>
+          item.name === product.name
+            ? { ...item, quantity: item.quantity + 1, subtotal: (item.quantity + 1) * item.precio }
+            : item
+        );
+      } else {
+        // Si no está en el carrito, lo agregamos
+        return [
+          ...prevCart,
+          { ...product, quantity: 1, subtotal: product.precio },
+        ];
+      }
+    });
+  };
+
+  // Función para eliminar un producto del carrito
+  const removeFromCart = (productName) => {
+    setCart((prevCart) => prevCart.filter((item) => item.name !== productName));
   };
 
   // Función para calcular el total del carrito
   const getTotal = () => {
-    return cart.reduce((total, product) => total + product.precio, 0);
+    return cart.reduce((total, product) => total + product.subtotal, 0);
   };
 
   // Función para obtener el número de productos en el carrito
   const getItemCount = () => {
-    return cart.length;
+    return cart.reduce((count, product) => count + product.quantity, 0);
   };
 
   // Función para reiniciar el carrito (eliminar todos los productos)
@@ -28,7 +49,7 @@ export function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, getTotal, getItemCount, resetCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, getTotal, getItemCount, resetCart }}>
       {children}
     </CartContext.Provider>
   );

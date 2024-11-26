@@ -4,7 +4,10 @@ import Producto1 from "./img/Producto1.jpg";
 import Producto2 from "./img/Producto2.jpg";
 import Producto3 from "./img/Producto3.jpg";
 import "./styles/card.css";
+import { IoCartSharp } from "react-icons/io5";
 import { useCart } from "./CartContext"; // Importamos el hook del contexto
+import { Sidebar } from "./Sidebar"; // Importamos el Sidebar
+
 
 const cards = [
   {
@@ -28,35 +31,33 @@ const cards = [
     precio: 110,
     descripcion: "Helado rico en sabores",
   },
+  
 ];
 
 export function Cards() {
-  const { addToCart, getTotal, getItemCount, resetCart } = useCart(); // Usamos el hook del contexto
+  const { addToCart, getItemCount} = useCart(); // Usamos el hook del contexto
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Estado para abrir/cerrar el sidebar
 
-  const [showCartSummary, setShowCartSummary] = useState(false); // Estado para mostrar/ocultar resumen del carrito
+  // Función para abrir el sidebar
+  const openSidebar = () => {
+    setIsSidebarOpen(true);
+  };
 
-  // Función para mostrar u ocultar el carrito
-  const toggleCartSummary = () => {
-    setShowCartSummary(!showCartSummary);
+  // Función para cerrar el sidebar
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
     <>
       {/* Botón flotante de carrito */}
-      <button className="useCart-toggle" onClick={toggleCartSummary}>
-        Carrito ({getItemCount()})
+      <button className="useCart-toggle" onClick={openSidebar}>
+        <IoCartSharp/> ({getItemCount()})
       </button>
-      {/* Resumen del carrito */}
-      {showCartSummary && (
-        <div className="cart-summary">
-          <h3 className="card-title">Resumen del Carrito</h3>
-          <p className="card-description">Total: ${getTotal()}</p>
-          <p className="card-description">Productos en el carrito: {getItemCount()}</p>
-          <button className="reset-btn" onClick={resetCart}>
-            Reiniciar carrito
-          </button>
-        </div>
-      )}
+
+      {/* Sidebar */}
+      <Sidebar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
+
       <div className="container bg-light p-4 border border-white rounded-3">
         {cards.map((product) => (
           <div key={product.id}>

@@ -92,6 +92,15 @@
     transition: background-color 0.3s ease;
 
 }
+
+  
+  .useCart-toggle svg {
+    font-size: 30px; /* Aumenta el tamaño del icono */
+    
+    margin-right: 8px; /* Espacio entre el icono y el contador */
+    
+  }
+  
 .reset-btn{
     padding: 15px;
     font-size: 1rem;

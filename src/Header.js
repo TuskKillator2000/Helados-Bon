@@ -30,6 +30,7 @@ export function Header() {
           <li>
             <NavLink to="/registro" >Registro</NavLink>
           </li>
+         
         </ul>
       </nav>
     </header>

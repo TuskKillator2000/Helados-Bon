@@ -6,7 +6,7 @@ import { Nosotros } from './Nosotros';
 import { Registro } from "./Registro.js";
 import { Home } from './Home';
 import { CartProvider } from './CartContext'; // Importa el CartProvider
-
+import { Sidebar } from "./Sidebar.js";
 function App() {
   return (
     <CartProvider>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/Registro" element={<Registro/>}/>
         </Routes>
         <Footer />
+        <Sidebar/>
         {/* También puedes renderizar el componente Registro aquí */}
       </Router>
     </CartProvider>

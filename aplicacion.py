@@ -5,7 +5,7 @@ import pyodbc
 app = Flask(__name__)
 CORS(app)
 
-# Configuración de conexión a SQL Server
+
 def get_db_connection():
     server = 'Miguel-PC'
     database = 'Helados_Bon'
@@ -36,14 +36,14 @@ def registrar():
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        # Insertar cliente y obtener ID
+ 
         cursor.execute(
             "INSERT INTO Clientes (nombre_cliente, correo_cliente) OUTPUT INSERTED.cliente_id VALUES (?, ?)",
             (nombre_cliente, correo_cliente)
         )
         cliente_id = cursor.fetchone()[0]
 
-        # Insertar detalle de la compra
+        
         cursor.execute(
             "INSERT INTO Detalles (cliente_id, total_compra) OUTPUT INSERTED.detalle_id VALUES (?, ?)",
             (cliente_id, total_compra)

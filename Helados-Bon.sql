@@ -5,12 +5,8 @@ use Helados_Bon
 
 
 -- Crear tabla Productos
-CREATE TABLE Productos (
-    codigo_producto NVARCHAR(50) PRIMARY KEY,
-    nombre_producto NVARCHAR(100) NOT NULL,
-    precio_producto INT NOT NULL,
-    cantidad_producto INT NOT NULL
-);
+
+SELECT * from Clientes
 
 -- Crear tabla Clientes
 CREATE TABLE Clientes (
@@ -38,9 +34,8 @@ CREATE TABLE DetallesProductos (
 );
 
 
+select * from DetallesProductos
 
-select * from Detalles
 
-select * from Clientes 
 
 

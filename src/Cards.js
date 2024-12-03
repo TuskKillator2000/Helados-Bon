@@ -30,7 +30,8 @@ const cards = [
     image: Producto3,
     precio: 110,
     descripcion: "Helado rico en sabores",
-  },
+  }
+ 
   
 ];
 

@@ -26,7 +26,7 @@ export function Registro() {
     console.log("Datos a enviar:", datosRegistro); // Revisión de los datos antes de enviarlos
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/registrar", {
+      const response = await fetch("https://helados-bon.onrender.com/registrar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
